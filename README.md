@@ -3,10 +3,10 @@ Hardware Acceleration for AI - Group Presentation
 
 ## Group Members
 
-- X
-- Y
-- Z
-- W
+- Carlos Cueto
+- Henry Ascencio
+- Vasista 
+- Aman 
 
 ## Installation and Setup
 
@@ -20,12 +20,19 @@ Hardware Acceleration for AI - Group Presentation
 
 ### Installation
 
-1. Clone the repo
-2. Install the required packages using `pip install -r requirements.txt`
+1. Make sure to install the DepthAI libraries. Follow the instructions here https://docs.luxonis.com/en/latest/pages/tutorials/first_steps/.
+2. Clone the repo.
+2. Install the required packages using `pip install -r requirements.txt`.
 
 ## Usage
 
 ### Running the application
 
-1. Run the `main.py` file
+1. Connect OAK-D Lite to the computer.
+3. Run the `main.py` file.
+
+### References
+
+- [1] https://github.com/geaxgx/depthai_hand_tracker
+- [2] https://github.com/pywinauto/pywinauto
 
