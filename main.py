@@ -1,27 +1,19 @@
 #!/usr/bin/env python3
-
-README = """
-This basic demo demonstrates the control the user have on how and when events are triggered,
-by simply printing to the console event information each time an event is triggered. 
-
-This control is defined with the following parameters of a pose-action:
-- trigger : possible values: 
-    - enter (default): an event is triggered once, when the pose begins,
-    - enter_leave : two events are triggered, one when the pose begins and one when the pose ends,
-    - periodic : events are triggered periodically as long as the pose stands.
-                 The period is given by the parameter 'next_trigger_delay' in s.
-    - continuous : events are triggered on every frame.
-
-- first_trigger_delay: because false positive happen in pose recognition, 
-you don't necessarily want to trigger an event on the first frame where the pose is recognized.
-The 'first_trigger_delay' in seconds specifies how long the pose has to stand before triggering
-an initial event.
-
-"""
-
-print(README)
-
+# -*- coding: utf-8 -*-
+import pywinauto
 from HandController import HandController
+
+def open_notepad(event):
+    event.print_line()
+    print(event)
+    try:
+        app = pywinauto.application.Application().connect(path="notepad.exe")
+        print("notepad is already open")
+    except pywinauto.application.ProcessNotFoundError:
+        app = pywinauto.application.Application().start("notepad.exe")
+        print("notepad is not open")
+    app.Notepad.wait("visible")
+    return app
 
 def trace(event):
     event.print_line()
@@ -41,10 +33,13 @@ config = {
     'pose_actions' : [
         {'name': '1_right_enter', 'pose':'ONE', 'hand':'right', 'callback': 'trace',"trigger":"enter", "first_trigger_delay":0.3},
         {'name': '2_right_enter_leave', 'pose':['TWO','PEACE'], 'hand':'right', 'callback': 'trace',"trigger":"enter_leave"},
-        {'name': '3_right_periodic_1s', 'pose':'THREE', 'hand':'right', 'callback': 'trace', "trigger":"periodic", "first_trigger_delay":0, "next_trigger_delay": 1},
-        {'name': '4_right_periodic_0.3s', 'pose':'FOUR', 'hand':'right', 'callback': 'trace', "trigger":"periodic", "first_trigger_delay":0, "next_trigger_delay": 0.3},
-        {'name': '5_periodic_rotation', 'pose':'FIVE', 'callback': 'trace_rotation', "trigger":"periodic", "first_trigger_delay":0, "next_trigger_delay": 0.2},
-        {'name': '1_left_continuous_xy', 'pose':'ONE', 'hand':'left', 'callback': 'trace_index_finger_tip',"trigger":"continuous"},
+        # To open notepad, the fist must be in the pose for at least 0.3 seconds
+        {'name': '1_open_notepad', 'pose':'FIST', 'hand':'right', 'callback': 'open_notepad', "trigger":"enter_leave", "first_trigger_delay":0.3},
+
+        # {'name': '3_right_periodic_1s', 'pose':'THREE', 'hand':'right', 'callback': 'trace', "trigger":"periodic", "first_trigger_delay":0, "next_trigger_delay": 1},
+        # {'name': '4_right_periodic_0.3s', 'pose':'FOUR', 'hand':'right', 'callback': 'trace', "trigger":"periodic", "first_trigger_delay":0, "next_trigger_delay": 0.3},
+        # {'name': '5_periodic_rotation', 'pose':'FIVE', 'callback': 'trace_rotation', "trigger":"periodic", "first_trigger_delay":0, "next_trigger_delay": 0.2},
+        # {'name': '1_left_continuous_xy', 'pose':'ONE', 'hand':'left', 'callback': 'trace_index_finger_tip',"trigger":"continuous"},
     ]
 }
 
