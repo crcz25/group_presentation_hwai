@@ -17,6 +17,7 @@ Hardware Acceleration for AI - Group Presentation
 - depthai>=2.13
 - pywinauto >= 0.6.8
 - Pillow >= 8.2.0
+- Windows 10 (right now only win32 apps are supported)
 
 ### Installation
 
@@ -37,15 +38,23 @@ Hardware Acceleration for AI - Group Presentation
 ### Running the application
 
 1. Connect OAK-D Lite to the computer.
-3. Run the `main.py` file.
+3. Run the `main.py` file as follows:
+
+        python main.py
+3. To open notepad, raise your right hand and make a fist in front of the OAK-D camera.
+4. To write *HelloWorld!* in the notepad, raise your right hand and make a five in front of the OAK-D camera.
+4.1 The file will be written in the same directory as the `main.py` file.
 
 
+## Open Notepad with Hand Gesture
 ![open_notepad](https://user-images.githubusercontent.com/31625277/215558475-bfc38229-a5d9-47f1-a88c-4809fab27b26.gif)
 
 
+## Write *HelloWorld!* in Notepad with Hand Gesture
 ![write_notepad](https://user-images.githubusercontent.com/31625277/215558505-fd0f0b57-403d-414d-8199-614359c43d75.gif)
 
 
+## Complete the full 
 ![both](https://user-images.githubusercontent.com/31625277/215558526-60b3051a-ee98-40d3-84cd-d15db03d24d4.gif)
 
 
