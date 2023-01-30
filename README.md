@@ -39,6 +39,16 @@ Hardware Acceleration for AI - Group Presentation
 1. Connect OAK-D Lite to the computer.
 3. Run the `main.py` file.
 
+
+![open_notepad](https://user-images.githubusercontent.com/31625277/215558475-bfc38229-a5d9-47f1-a88c-4809fab27b26.gif)
+
+
+![write_notepad](https://user-images.githubusercontent.com/31625277/215558505-fd0f0b57-403d-414d-8199-614359c43d75.gif)
+
+
+![both](https://user-images.githubusercontent.com/31625277/215558526-60b3051a-ee98-40d3-84cd-d15db03d24d4.gif)
+
+
 ### References
 
 - [1] https://github.com/geaxgx/depthai_hand_tracker
