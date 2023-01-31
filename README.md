@@ -48,6 +48,8 @@ Hardware Acceleration for AI - Group Presentation
 3. To open notepad, raise your right hand and make a fist in front of the OAK-D camera.
 4. To write *HelloWorld!* in the notepad, raise your right hand and make a five in front of the OAK-D camera.
 
+> The application will save and exit the notepad instance only if the Windows System Language is **english**.
+
 
 ## Open Notepad with Hand Gesture
 ![open_notepad](https://user-images.githubusercontent.com/31625277/215558475-bfc38229-a5d9-47f1-a88c-4809fab27b26.gif)
