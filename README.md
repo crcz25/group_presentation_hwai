@@ -30,8 +30,12 @@ Hardware Acceleration for AI - Group Presentation
         ImportError: DLL load failed while importing win32ui: Error en una rutina de inicialización de biblioteca de vínculos dinámicos (DLL).
     
     You need to **install a new version of pywin32**, and also run the following command afterwards:
+        
+        $ pip uninstall pywin32
 
-        python Scripts/pywin32_postinstall.py -install
+        $ pip install pywin32
+
+        $ python Scripts/pywin32_postinstall.py -install
 
 ## Usage
 
@@ -43,7 +47,8 @@ Hardware Acceleration for AI - Group Presentation
         python main.py
 3. To open notepad, raise your right hand and make a fist in front of the OAK-D camera.
 4. To write *HelloWorld!* in the notepad, raise your right hand and make a five in front of the OAK-D camera.
-4.1 The file will be written in the same directory as the `main.py` file.
+
+> The application will save and exit the notepad instance only if the Windows System Language is **english**.
 
 
 ## Open Notepad with Hand Gesture
@@ -54,7 +59,7 @@ Hardware Acceleration for AI - Group Presentation
 ![write_notepad](https://user-images.githubusercontent.com/31625277/215558505-fd0f0b57-403d-414d-8199-614359c43d75.gif)
 
 
-## Complete the full 
+## Complete functionality 
 ![both](https://user-images.githubusercontent.com/31625277/215558526-60b3051a-ee98-40d3-84cd-d15db03d24d4.gif)
 
 
